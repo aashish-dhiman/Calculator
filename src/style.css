@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.container {
+    background-color: #111111;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.display {
+    height: 6rem;
+    width: 100%;
+    word-wrap: break-word;
+    border-bottom: 1px rgba(128, 128, 128, 0.116) solid;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, minmax(40px, auto));
+}
+
+.currentInput {
+    width: 100%;
+    color: white;
+    text-align: right;
+    font-size: xx-large;
+    line-height: 2;
+    word-wrap: break-word;
+}
+
+.finalAnswer {
+    text-align: right;
+    color: rgba(150, 150, 150, 0.87);
+    height: 4px;
+    line-height: 3;
+    font-size: larger;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, 70px);
+    grid-gap: 15px;
+    padding: 10px 0 0 0;
+    border-top: 1px solid #474b6b;
+}
+
+.buttons button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: #111111;
+    color: #fff;
+    font-size: x-large;
+}
+
+.buttons .fun_btn {
+    color: #000;
+    background-color: #35b7ff;
+    font-weight: bold;
+    transform: scale(0.9);
+}
+
+.num_btn:hover {
+    background-color: #282a3a;
+}
+
+.fun_btn:hover {
+    background-color: #17a6f4;
+}
