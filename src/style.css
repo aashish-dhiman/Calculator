@@ -8,6 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 90vh;
+    background-color: #282a3a;
 }
 
 .container {
@@ -79,5 +80,5 @@ body {
 }
 
 .fun_btn:hover {
-    background-color: #17a6f4;
+    background-color: #1099e3;
 }
