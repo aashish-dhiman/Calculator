@@ -25,21 +25,12 @@ buttons.forEach((btn) => {
 
         //erasing single digit
         if (btn.id.match("erase")) {
-            realTimeExpression.pop();
-            currentInput.innerHTML = realTimeExpression.join("");
-            finalAnswer.innerHTML = eval(realTimeExpression.join(""));
+            func_erase();
         }
 
         // evaluating final answer on clicking evaluate button
         if (btn.id.match("evaluate")) {
-            currentInput.className = "finalAnswer";
-            finalAnswer.className = "currentInput";
-            finalAnswer.style.color = "white";
-        }
-
-        //undefined error
-        if (typeof eval(realTimeExpression.join("")) === "undefined") {
-            finalAnswer.innerHTML = 0;
+            func_eval();
         }
     });
 });
@@ -57,3 +48,33 @@ function setDisplay() {
     finalAnswer.className = "finalAnswer";
     finalAnswer.style.color = "rgba(150, 150, 150, 0.87)";
 }
+
+function func_erase() {
+    realTimeExpression.pop();
+    currentInput.innerHTML = realTimeExpression.join("");
+    finalAnswer.innerHTML = eval(realTimeExpression.join(""));
+
+    //undefined error
+    if (typeof eval(realTimeExpression.join("")) === "undefined") {
+        finalAnswer.innerHTML = 0;
+    }
+}
+
+function func_eval() {
+    currentInput.className = "finalAnswer";
+    finalAnswer.className = "currentInput";
+    finalAnswer.style.color = "white";
+}
+
+//keypress events
+document.addEventListener("keydown", (e) => {
+    // console.log(e);
+    e.preventDefault();
+    if (e.key === "Enter") {
+        func_eval();
+    }
+
+    if (e.key === "Backspace") {
+        func_erase();
+    }
+});
